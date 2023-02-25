@@ -1,0 +1,87 @@
+section{
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+aside{
+    height: 90%;
+}
+footer{
+    background-color: #FFD961;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+aside .aside-left-content .left-header{
+  margin-top: 10px;
+   text-align: center;
+}
+aside .aside-left-content{
+    margin-left: 8%;
+    margin-right: 5%;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+aside .aside-left-content .left-list{
+    margin-top: 10px;
+}
+aside .aside-left-content .left-list .list-item{
+text-align: center;
+background-color:blueviolet;
+color: whitesmoke;
+display: block;
+margin-top: 10px;
+height: 50px;
+font-size: 14pt;
+max-height: max-content;
+list-style-type: none;
+transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+border-radius: 10px;
+}
+aside .aside-left-content .left-list .list-item:hover{
+    background-color: #FFD961;
+color: black;
+}
+article .full-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+}
+.full-content .left-content{
+    margin-top: 5%;
+    height: 300px
+}
+.full-content .left-content .content-video{
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+}
+.full-content .right-content{
+    margin-top: 5%;
+}
+.full-content .right-content table tr{
+    height: 30px;
+}
+
+.full-content .right-content table th{
+    text-align: right;
+}
+fieldset{
+   width: 90%;
+   height: 90%;
+   overflow-y: scroll;
+}
+legend{
+   margin-left: 30px;
+   padding-left: 10px;
+   padding-right: 10px;
+   font-size: 16pt;
+}
+footer .footer-content{
+    width: 40%;
+    margin-left: 30%;
+    font-style:oblique;
+    display: inline;
+    margin-top: 10px;
+ }
+ footer strong{
+    margin-left: 30%;
+ }

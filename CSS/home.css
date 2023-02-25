@@ -1,0 +1,33 @@
+footer{
+    background-color: #FFD961;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 15px;
+  }
+  section{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+  article image{
+    margin-left: 20px;
+  }
+  #slaytButton button{
+    margin-left: 3px;
+    background-color:dimgray;
+    color: white;
+    border: 0;
+    cursor: pointer;
+  }
+  

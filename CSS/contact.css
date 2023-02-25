@@ -1,0 +1,26 @@
+footer{
+    background-color: #FFD961;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+section{
+    display: grid;
+    grid-template-columns: 10% 80%;
+}
+fieldset{
+    height: 350px;
+    width: 80%;
+    margin-left: 10%;
+}
+table{
+    height: 90%;
+    margin-top: 3%;
+}
+legend{
+    margin-left: 50px;
+    padding:0 20PX;
+}
+#location iframe{
+    height: 100%;
+    width: 100%;
+}

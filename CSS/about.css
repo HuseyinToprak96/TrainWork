@@ -1,0 +1,19 @@
+footer{
+    background-color: #FFD961;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+section{
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+p{
+margin-top: 3%;
+}
+h3,h4{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+#content{
+    margin-left: 3%;
+}
