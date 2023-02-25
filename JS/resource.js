@@ -864,7 +864,31 @@ title:"form-center-label7",
 content:"Trainer",
 language:"2"
 },
-
+    {
+    page:"admin",
+    title:"message",
+    content:"Emin misiniz?",
+    language:"1"
+    },
+    {
+    page:"admin",
+    title:"message",
+    content:"Are you sure?",
+    language:"2"
+    },
+    {
+        page:"admin",
+        title:"success-message",
+        content:"Başarıyla Eklendi!",
+        language:"1"
+        },
+        {
+        page:"admin",
+        title:"success-message",
+        content:"Added Successfully!",
+        language:"2"
+        },
+    
 ]
 
 function selectLanguage(lang){

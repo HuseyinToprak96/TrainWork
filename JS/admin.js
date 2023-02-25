@@ -20,7 +20,9 @@ nav.innerHTML=html;
 //GET
 function getLeft(){
 var aside=document.getElementsByTagName("aside")[0];
-var html="<h3>"+resource.filter(x=>x.page=="admin" && x.title=="left-table-header" && x.language==lang)[0].content+"</h3><div class='table-div' ><table id='left-table'>";
+var html="<h3>"+resource.filter(x=>x.page=="admin" && x.title=="left-table-header" && x.language==lang)[0].content+"</h3><div class='table-div' >";
+html+="<div class='alert-success' id='left-alert'>"+resource.filter(x=>x.page=="admin" && x.title=="success-message" && x.language==lang)[0].content+"</div>";
+html+="<table id='left-table'>";
 html+="<tr><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td1" && x.language==lang)[0].content+"</th><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td2" && x.language==lang)[0].content+"</th><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td3" && x.language==lang)[0].content+"</th></tr>";
 var students=userList.filter(x=>x.Role==2);
 var i=1;
@@ -52,7 +54,9 @@ return html;
 
 function getCenter(){
     var article=document.getElementsByTagName("article")[0];
-    var html="<h3>"+resource.filter(x=>x.page=="admin" && x.title=="center-table-header" && x.language==lang)[0].content+"</h3><div class='table-div'><table id='center-table'>";
+    var html="<h3>"+resource.filter(x=>x.page=="admin" && x.title=="center-table-header" && x.language==lang)[0].content+"</h3><div class='table-div'>";
+    html+="<div class='alert-success' id='center-alert'>"+resource.filter(x=>x.page=="admin" && x.title=="success-message" && x.language==lang)[0].content+"</div>";
+    html+="<table id='center-table'>";
     html+="<tr><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td1" && x.language==lang)[0].content+"</th><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td4" && x.language==lang)[0].content+"</th><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td3" && x.language==lang)[0].content+"</th></tr>";
     var teachers=elearnings;
     var i=1;
@@ -98,7 +102,9 @@ return html;
 
 function getRight(){
 var aside=document.getElementsByTagName("aside")[1];
-var html="<h3>"+resource.filter(x=>x.page=="admin" && x.title=="right-table-header" && x.language==lang)[0].content+"</h3><div class='table-div'><table id='right-table'>";
+var html="<h3>"+resource.filter(x=>x.page=="admin" && x.title=="right-table-header" && x.language==lang)[0].content+"</h3><div class='table-div'>";
+html+="<div class='alert-success' id='right-alert'>"+resource.filter(x=>x.page=="admin" && x.title=="success-message" && x.language==lang)[0].content+"</div>";
+html+="<table id='right-table'>";
 html+="<tr><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td1" && x.language==lang)[0].content+"</th><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td2" && x.language==lang)[0].content+"</th><th>"+resource.filter(x=>x.page=="admin" && x.title=="table-td3" && x.language==lang)[0].content+"</th></tr>";
 var teachers=userList.filter(x=>x.Role==1);
 var i=1;
@@ -135,20 +141,23 @@ function goHome(){
 //REMOVE
 
 function removeChildren(id){
+    if(confirm(resource.filter(x=>x.page=="admin" && x.title=="message" && x.language==lang)[0].content)){
 var tr=document.getElementById("children_"+id);
-tr.remove();
+tr.remove();}
 }
 
 
 function removeElearning(id){
+    if(confirm(resource.filter(x=>x.page=="admin" && x.title=="message" && x.language==lang)[0].content)){
 var tr=document.getElementById("elearning_"+id);
-tr.remove();
+tr.remove();}
 }
 
 
 function removeTeacher(id){
+    if(confirm(resource.filter(x=>x.page=="admin" && x.title=="message" && x.language==lang)[0].content)){
 var tr=document.getElementById("teacher_"+id);
-tr.remove();
+tr.remove();}
 }
 
 //ADD
@@ -159,6 +168,8 @@ function addChildren(){
     var p=document.getElementById("children-password").value;
     var i=userList.length+1;
     table.innerHTML+="<tr id='children_"+i+"'><td>"+i+"</td><td>"+u+"</td><td><button class='btn-remove' onclick='removeChildren("+i+")'>"+resource.filter(x=>x.page=="admin" && x.title=="table-td3" && x.language==lang)[0].content+"</button></td></tr>"
+    document.getElementById("left-alert").style.display="block";
+    setTimeout(noneAlert,3000);
     var user={
         Username:u,
         Password:p,
@@ -178,6 +189,8 @@ function addTeacher(){
     var u=document.getElementById("teacher-username").value;
     var p=document.getElementById("teacher-password").value;
     var i=userList.length+1;
+    document.getElementById("right-alert").style.display="block";
+setTimeout(noneAlert,3000);
     table.innerHTML+="<tr id='teacher_"+i+"'><td>"+i+"</td><td>"+u+"</td><td><button class='btn-remove' onclick='removeTeacher("+i+")'>"+resource.filter(x=>x.page=="admin" && x.title=="table-td3" && x.language==lang)[0].content+"</button></td></tr>"
 
     var user={
@@ -189,3 +202,9 @@ function addTeacher(){
 userList.push(user);
 }
 
+function noneAlert(){
+var alerts=document.getElementsByClassName("alert-success");
+for (let index = 0; index < alerts.length; index++) {
+    alerts[index].style.display="none";
+}
+}

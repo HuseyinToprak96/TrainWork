@@ -90,7 +90,7 @@ margin-left: 5%;
     width: 40%;
     height: 25px;
 }
-#children-username, #children-password{
+#children-username, #children-password,#teacher-username, #teacher-password{
     width: 70%;
     height: 25px;
     margin-left: 3%;
@@ -114,4 +114,14 @@ margin-left: 5%;
 }
 .btn-save:active{
     border: 2px solid black;
+}
+.alert-success{
+    display: none;
+    height: 40px;
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgb(58, 226, 58);
+    font-size: 15pt;
+    text-align: center;
+    color: aliceblue;
 }
